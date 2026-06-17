@@ -1,23 +1,36 @@
 RewriteEngine On
 RewriteBase /
 
-# Protege archivos sensibles
-<FilesMatch "^(\.env|\.git|\.htaccess|composer\.(json|lock)|package(-lock)?\.json|yarn\.lock|webpack\.config\.js|\.DS_Store|\.vscode|\.idea|\.babelrc|\.editorconfig)$">
+# Redirigir todo hacia /public
+RewriteCond %{REQUEST_URI} !^/public/
+RewriteRule ^(.*)$ public/$1 [L]
+
+# Bloquear acceso a archivos ocultos (.env, .git, etc.)
+RewriteRule "(^|/)\." - [F,L]
+
+# Bloquear carpetas sensibles de CodeIgniter/Laravel
+RewriteRule ^(app|system|vendor|writable|tests|node_modules|storage)(/|$) - [F,L,NC]
+
+# Bloquear archivos sensibles
+<FilesMatch "(^\.env$|composer\.(json|lock)$|package(-lock)?\.json$|yarn\.lock$|phpunit\.xml$|spark$|artisan$)">
     Order allow,deny
     Deny from all
 </FilesMatch>
 
-RedirectMatch 403 /\..*$
-
+# Bloquear backups y logs
 <FilesMatch "\.(bak|log|sql|swp|old|orig|tmp|save|gz|zip)$">
     Order allow,deny
     Deny from all
 </FilesMatch>
 
-# Redirige todas las peticiones a /public excepto si ya están en /public
-RewriteCond %{REQUEST_URI} !^/public/
-RewriteRule ^(.*)$ public/$1 [L,QSA]
+# Deshabilitar listado de directorios
+Options -Indexes
 
+# php -- BEGIN cPanel-generated handler
+<IfModule mime_module>
+  AddHandler application/x-httpd-ea-php82 .php .php8 .phtml
+</IfModule>
+# php -- END cPanel-generated handler
 
 # php -- BEGIN cPanel-generated handler, do not edit
 # Set the “ea-php82” package as the default “PHP” programming language.

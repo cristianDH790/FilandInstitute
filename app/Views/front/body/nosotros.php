@@ -18,7 +18,7 @@
 		<div class="row">
 			<div class="col-md-12">
 				<h2>¿Quiénes Somos?</h2>
-				<p>El, INSTITUTO CULTURAL NORDICO Peruano-Finlandés, es una institución educativa cultural fundada en el Perú en el año 2017, que tiene como objetivo, promover la cultura y los idiomas de los países nórdicos en el PERU en el extranjero. Nuestra Misión es emprender en la vida de las personas, ya sea por estudios, trabajo, turismo, los valores culturales que brinda la sociedad de los países nórdicos, nuestra institución le brinda esa oportunidad a través de sus diversos cursos y programas en un entorno de aprendizaje práctico y tutorial.</p>
+				<p>El, INSTITUTO CULTURAL NORDICO, es una institución educativa cultural fundada en el Perú en el año 2017, que tiene como objetivo, promover la cultura y los idiomas de los países nórdicos en el PERU en el extranjero. Nuestra Misión es emprender en la vida de las personas, ya sea por estudios, trabajo, turismo, los valores culturales que brinda la sociedad de los países nórdicos, nuestra institución le brinda esa oportunidad a través de sus diversos cursos y programas en un entorno de aprendizaje práctico y tutorial.</p>
 
 				<ul class="nav nav-tabs" id="myTab" role="tablist">
 					<li class="nav-item" role="presentation">
@@ -33,7 +33,7 @@
 				</ul>
 				<div class="tab-content" id="myTabContent">
 					<div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
-						<p>Según los niveles del MCER (Marco Común Europeo de Referencia) para Idiomas se expresan en seis niveles, desde Usuario Básico (A1 y A2) pasando por Usuario Independiente (B1 y B2) hasta Usuario Competente (C1 y C2). Todos los cursos del Instituto Cultural Nórdico Peruano, Nivel 1A + B están en el nivel MCER A1. Están dirigidos a aprender y revisar los conceptos básicos de los lenguajes nórdicos.</p>
+						<p>Según los niveles del MCER (Marco Común Europeo de Referencia) para Idiomas se expresan en seis niveles, desde Usuario Básico (A1 y A2) pasando por Usuario Independiente (B1 y B2) hasta Usuario Competente (C1 y C2). Todos los cursos del Instituto Cultural Nórdico, Nivel 1A + B están en el nivel MCER A1. Están dirigidos a aprender y revisar los conceptos básicos de los lenguajes nórdicos.</p>
 						<ol>
 							<li>Clases prácticas, atractivas y centradas en la comunicación.</li>
 							<li>Un examen opcional gratuito al final de cada curso de nivel completo.</li>

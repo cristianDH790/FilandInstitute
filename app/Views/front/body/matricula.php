@@ -78,9 +78,10 @@
                         </div>
 
                         <div class="col-md-12">
-                            <div class="form-group">
-                                <select class="form-control" name="prospects[levellanguages]" id="prospects_levellanguages">
-                                    <option value="">Nivel de idioma actual</option>
+                            <div class="form-group  form-check-group">
+                                 <label class="form-label">Nivel de idioma actual *</label>
+                                <select class="form-control"  name="prospects[levellanguages]" id="prospects_levellanguages">
+                                 
                                     <option value="Alto">Alto</option>
                                     <option value="Medio">Medio</option>
                                     <option value="Bajo">Bajo</option>

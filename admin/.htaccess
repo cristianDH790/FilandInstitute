@@ -1,0 +1,42 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    # Forzar HTTPS + dominio
+    RewriteCond %{HTTPS} off [OR]
+    RewriteCond %{HTTP_HOST} !^admin\.finlandinstitute\.com$ [NC]
+    RewriteRule ^(.*)$ https://admin.finlandinstitute.com/$1 [R=301,L]
+
+    # Bloquear archivos ocultos (.env, .git, etc.)
+    RewriteRule (^|/)\. - [F,L]
+
+    # Si archivo o carpeta existe, servir normal
+    RewriteCond %{REQUEST_FILENAME} -f [OR]
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteRule ^ - [L]
+
+    # Angular routes -> index.html
+    RewriteRule ^ index.html [L]
+</IfModule>
+
+# Bloquear archivos sensibles
+<FilesMatch "(^\.env$|composer\.(json|lock)$|package(-lock)?\.json$|yarn\.lock$|angular\.json$|tsconfig.*\.json$)">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Bloquear backups y logs
+<FilesMatch "\.(bak|log|sql|swp|old|orig|tmp|save|gz|zip)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Desactivar listado de carpetas
+Options -Indexes
+
+# php -- BEGIN cPanel-generated handler, do not edit
+# Set the “ea-php82” package as the default “PHP” programming language.
+<IfModule mime_module>
+  AddHandler application/x-httpd-ea-php82 .php .php8 .phtml
+</IfModule>
+# php -- END cPanel-generated handler, do not edit

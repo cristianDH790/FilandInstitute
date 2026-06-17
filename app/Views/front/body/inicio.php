@@ -52,9 +52,9 @@
 			<div class="col-md-12">
 				<div class="ed-header layout-2">
 					<span class="ed-badge">Explore</span>
-					<h2 class="section-header">Bienvenidos al Instituto Cultural Nórdico Peruano Finlandés.</h2>
-					<p>Hola! Promovemos el conocimiento de los idiomas nórdicos. Aprende un idioma para situaciones cotidianas. Ofrecemos cursos de idiomas nórdicos que son interactivos, comunicativos y asequibles. Ingrese al aula virtual del Instituto Cultural Nórdico Peruano Finlandés, (I.C.N.P.F.) donde aprenderá de un tutor calificado. Se cubren las cuatro áreas de habilidades, hablar, escuchar, escribir y leer para situaciones cotidianas. Nuestras clases están abiertas al público en general y no tienen requisitos previos ni pruebas de nivel. Simplemente inscríbase en línea y reciba su enlace del curso vía nuestra plataforma Zoom.</p>
-					<a href="#">Más información</a>
+					<h2 class="section-header">Bienvenidos al Instituto Cultural Nórdico</h2>
+					<p>Hola! Promovemos el conocimiento de los idiomas nórdicos. Aprende un idioma para situaciones cotidianas. Ofrecemos cursos de idiomas nórdicos que son interactivos, comunicativos y asequibles. Ingrese al aula virtual del Instituto Cultural Nórdico donde aprenderá de un tutor calificado. Se cubren las cuatro áreas de habilidades, hablar, escuchar, escribir y leer para situaciones cotidianas. Nuestras clases están abiertas al público en general y no tienen requisitos previos ni pruebas de nivel. Simplemente inscríbase en línea y reciba su enlace del curso vía nuestra plataforma Zoom.</p>
+					<a href="<?= base_url(); ?>nosotros">Más información</a>
 				</div>
 			</div>
 		</div>
@@ -77,7 +77,7 @@
 							<div class="accordion-body">
 								<div class="d-flex">
 									<div class="box-texto">
-										<p>Todos los cursos de idiomas de nórdicos utilizan actualmente el software de videoconferencia Zoom. Ingrese a una de las aulas virtuales, donde aprenderá de tutores calificados. No hay requisitos de ingreso, simplemente puede inscribirse en línea. Aunque la oficina del I.C.N.P.F., está cerrada hasta nuevo aviso, se puede contactar fácilmente durante el horario laboral por correo electrónico. ¡Esperamos verlos muy pronto!</p>
+										<p>Todos los cursos de idiomas de nórdicos utilizan actualmente el software de videoconferencia Zoom. Ingrese a una de las aulas virtuales, donde aprenderá de tutores calificados. No hay requisitos de ingreso, simplemente puede inscribirse en línea. Aunque la oficina del I.C.N., está cerrada hasta nuevo aviso, se puede contactar fácilmente durante el horario laboral por correo electrónico. ¡Esperamos verlos muy pronto!</p>
 									</div>
 									<div class="box-img">
 										<img src="<?= base_url(); ?>template/images/logo-zoom.png">
@@ -121,8 +121,8 @@
 					<p>Comunícate con nosotros por nuestros distintos canales selecciona alguna de nuestras opciones.</p>
 				</div>
 				<div class="btns-ayuda">
-					<a href="#" class="con">Contáctanos</a>
-					<a href="#" class="wsp">Whatsapp</a>
+					<a href="<?= base_url(); ?>contacto" class="con">Contáctanos</a>
+					<a href="https://wa.me/+51942086741" target="_blank" class="wsp">Whatsapp</a>
 				</div>
 			</div>
 		</div>
@@ -140,7 +140,19 @@
 				</div>
 
 				<div class="owl-carousel4 owl-theme">
+				    <? foreach ($cursos as $curso): ?>
 					<div class="item">
+						<div class="img">
+							<a href="<?= base_url(); ?>curso-online/<?= $curso->urlamigable ?>"><img src="<?= base_url(); ?>archivos/curso/<?= $curso->urlimagen ?>"></a>
+						</div>
+						<div class="texto">
+							<h4><?= $curso->nombre ?></h4>
+							<p><?= $curso->resumen ?></p>
+							<a href="<?= base_url(); ?>curso-online/<?= $curso->urlamigable ?>">Ver más</a>
+						</div>
+					</div>
+					<? endforeach; ?>
+				<!-- 	<div class="item">
 						<div class="img">
 							<a href="#"><img src="<?= base_url(); ?>template/images/bandera-noruega.png"></a>
 						</div>
@@ -169,7 +181,7 @@
 							<p>Ofrecemos cursos de idioma sueco que son interactivos, comunicativos y asequibles. Todas las lecciones de idioma sueco </p>
 							<a href="#">Ver más</a>
 						</div>
-					</div>
+					</div>-->
 				</div>
 
 			</div>

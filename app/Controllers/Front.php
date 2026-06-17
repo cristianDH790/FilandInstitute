@@ -39,6 +39,7 @@ class Front extends BaseController
 		$data["url"] = "";
 
 		$data['sliders'] = $this->slider->buscarPor("orden", "asc", "", "", 428, 0, 0, 0, 0);
+$data['cursos'] = $this->curso->buscarPor("fecha", "asc", "", "", 430, 0, 0, 0);
 
 		$this->front_views('front/body/inicio', $data);
 	}
